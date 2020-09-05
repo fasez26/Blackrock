@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 import { makeStyles, Theme } from '@material-ui/styles';
 import { Button, Typography } from '@material-ui/core'
 import '../../assets/styles/Styles.css';
-import person from '../../assets/images/Avatar.png';
+import piggyBank from '../../assets/images/handplantcoin.svg';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card'
@@ -49,7 +49,7 @@ function CoursesHome() {
 
             <Grid container >
                 <Grid item xs={3}>
-                    <Avatar alt="Remy Sharp" src={person} className={classes.large} />
+                    <Avatar alt="Remy Sharp" src={piggyBank} className={classes.large} />
                 </Grid>
                 <Grid item xs={9}>
                     <Typography variant="h5" align='left' className={classes.textTitle} >María Sánchez</Typography>
