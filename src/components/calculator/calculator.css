@@ -1,0 +1,14 @@
+.calculator-container{
+    background-color: #F2F2F7; 
+    width: 415px; 
+    height: 840px; 
+}
+
+.calculator-header{
+    background-color: #136EAC; 
+    width: 415px;
+    height: 85px; 
+}
+.selector{
+    background-color: antiquewhite !important;
+}

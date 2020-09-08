@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/styles";
 import { Button, Typography } from "@material-ui/core";
 import "../../assets/styles/Styles.css";
@@ -16,6 +17,9 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -51,18 +55,31 @@ const useStyles = makeStyles((theme) => ({
     align: "left",
   },  
   root1: {
-    background:"radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(14,93,186,1) 0%)",
+    background: '#0076BE',
     borderRadius: 3,
     border: 1,
     color: "white",
     height: 65,
     padding: "0 80px",
   },
+  menuButton: {
+    // paddingTop: "5px",
+    // paddingBottom: "1px",
+    color: "white",
+    marginTop: theme.spacing(-17),
+    marginLeft: theme.spacing(43),
+  },
   
 }));
 
-function Home() {
+function Home({history}) {
   const classes = useStyles();
+  const openCourses = () => {
+    history.push("/courses");
+  };
+  const openInv = () =>{
+    history.push("/HomeSI");
+  }
   return (
     <div className="App container">
       <Grid container>
@@ -70,6 +87,14 @@ function Home() {
           <Typography variant="h5" align="left" className={classes.textTitle}>
             ¡Hola María!
           </Typography>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton>
         </Grid>
       </Grid>
       <Grid container justify="center">
@@ -90,8 +115,9 @@ function Home() {
                 className={classes.media}
                 image={blackrock}
                 title="Contemplative Reptile"
-              />
-              <Button size="small" color="primary">
+              /> 
+
+              <Button size="small" color="primary" onClick={openCourses}>
                 Aprende Aquí
               </Button>
               <CardMedia
@@ -166,7 +192,7 @@ function Home() {
           </Card>
         </Grid>
       </Grid>
-      <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+      <br></br> <br></br> <br></br> <br></br> <br></br> 
       <Grid container justify="center">
         <Grid item xs={10}>
           <Card
@@ -189,6 +215,7 @@ function Home() {
                 className="invest"
                 image={invest}
                 title="Contemplative Reptile"
+                onClick={openInv}
               />
             </CardActions>
           </Card>
@@ -198,4 +225,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default withRouter(Home);
