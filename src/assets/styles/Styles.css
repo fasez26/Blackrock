@@ -20,6 +20,18 @@
   z-index: 1;
 }
 
+.react-slideshow-container+div.indicators{
+  margin-top: -40px !important; 
+  z-index: 100000; 
+}
+
+.each-slideshow-indicator::before{
+  background: white !important; 
+}
+
+.each-slideshow-indicator.active::before{
+  background: #00BDF2 !important; 
+}
 
 .title1{
   font-size: 20px;
@@ -43,32 +55,32 @@
 
 .card-saving {
   position: absolute;
+  border-radius: 4px; 
   width: 366px;
-  height: 125px;
+  height: 90px;
   left: 22px;
-  top: 350px;
+  top: 340px;
   background:white;
-  border-radius: 20px;
   box-shadow: 2px 2px 5px #999;
   
 }
 .card-inv {
   position: absolute;
+  border-radius: 4px; 
   width: 366px;
-  height: 125px;
+  height: 90px;
   left: 22px;
-  top: 490px;
+  top: 455px;
  background:white;
-  border-radius: 20px;
   box-shadow: 2px 2px 5px #999;
   
 }
 .expand_more{
-  position: absolute;
+position: absolute;
 width: 36px;
 height: 36px;
 left: 330px;
-top: 50px;
+top: 29px;
 }
 .fond{
   background: #EEEEEE;
@@ -80,7 +92,7 @@ top: 50px;
   position: absolute;
   width: 87px;
   height: 28px;
-  left: 134px;
+  left: 120px;
   top: 1px;
 
   font-family: Roboto;
@@ -123,33 +135,41 @@ top: 50px;
   width: 68px;
   height: 68px;
   left: 20px;
-  top: 44px;
+  top: 11px;
 }
 .notifical{
   position: absolute;
-width: 202px;
-height: 140px;
+width: 240px;
+height: 200px;
 left: 40px;
-top: 637px;
+top: 610px;
 }
 .ahorra{
-  position: absolute;
+position: absolute;
 width: 209px;
 height: 35px;
-left: 104px;
-top: 42px;
+left: 120px;
+top: 30px;
 
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 14px;
+font-size: 14.5px;
 line-height: 16px;
 display: flex;
 align-items: center;
-
-
 color: #97999B;
 }
+
+.react-slideshow-container .default-nav{
+  color: transparent !important; 
+  background: rgba(255,255,255,0.0) !important; 
+}
+
+.button.nav.default-nav{
+  color: red !important; 
+}
+
 .expand {
   position: absolute;
   width: 36px;
@@ -183,7 +203,7 @@ color: #97999B;
   width: 68px;
   height: 68px;
   left: 20px;
-  top: 54px;
+  top: 13px;
 }
 .transfer {
   position: absolute;
@@ -225,12 +245,29 @@ h3 {
   text-align: center;
 }
 
+h2.text1{
+  margin-top: 13px; 
+}
 .each-slide > div {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-size: cover;
-  height: 300px;
+  height: 214px;
+  width:411px;
+}
+
+.text-mito{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #00BDF2; 
 }
 
 .each-slide span {
@@ -239,7 +276,6 @@ h3 {
   background: #efefef;
   text-align: center;
 }
-
 .each-fade {
   display: flex;
 }
@@ -280,6 +316,7 @@ h3 {
 }
 
 .card-fond{
+border-radius: 3px; 
 position: absolute;
 width: 370px;
 height: 135px;
@@ -290,29 +327,24 @@ box-shadow: 2px 2px 5px #999;
 
 }
 .p1{
-  position: absolute;
+position: absolute;
 width: 370px;
 height: 23px;
 left: 21px;
-top: 90px;
-
+top: 100px;
 font-family: Roboto;
 font-style: normal;
 font-weight: 500;
-font-size: 25px;
+font-size: 21px;
 line-height: 23px;
-
-
-
 color: #323232;
 }
 .p2{
-  position: absolute;
+position: absolute;
 width: 298px;
 height: 21px;
 left: 21px;
-top: 135px;
-
+top: 140px;
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -333,6 +365,20 @@ left: 54.86%;
 right: -0.45%;
 top: 0%;
 bottom: 0%;
+}
+.liga{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration-line: underline;
+
+  color: #FFFFFF;
 }
 
 .card-blkmas{

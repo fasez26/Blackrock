@@ -9,6 +9,8 @@ import redbanamex from "../../assets/images/redcitibanamex.png";
 import greencard from "../../assets/images/greencard.png";
 import bluecard from "../../assets/images/bluecard.png";
 import transfer from "../../assets/images/transfer.svg";
+import logs from "../../assets/images/logs.svg";
+import lern from "../../assets/images/lernHear.svg";
 import pay from "../../assets/images/pay.svg";
 import invest from "../../assets/images/invest.svg";
 import Grid from "@material-ui/core/Grid";
@@ -19,6 +21,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
+import { blue } from "@material-ui/core/colors";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -35,12 +38,14 @@ const useStyles = makeStyles((theme) => ({
   textTitle: {
     color: "#fafafa",
     align: "center",
-    margin: theme.spacing(5),
+    marginTop: theme.spacing(6),
+    marginLeft: theme.spacing(3),
   },
   textCard: {
     color: "#fafafa",
     align: "center",
     margin: theme.spacing(3),
+    
   }, 
   sizescards: {
     width: theme.spacing(10),
@@ -50,6 +55,24 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
   },
+  coin: {
+    width: theme.spacing(40),
+    height: theme.spacing(3),
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(-1),
+  },
+  logs: {
+    width: theme.spacing(40),
+    height: theme.spacing(3),
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(-.2),
+  },
+  coinright: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+    marginTop: theme.spacing(-4),
+    marginLeft: theme.spacing(31),
+  },
   textcard: {
     backgroundColor: "primary",
     align: "left",
@@ -58,16 +81,21 @@ const useStyles = makeStyles((theme) => ({
     background: '#0076BE',
     borderRadius: 3,
     border: 1,
-    color: "white",
-    height: 65,
-    padding: "0 80px",
+    marginTop: theme.spacing(10),
+    marginLeft: theme.spacing(4),
+    width: theme.spacing(44),
+    height: 53,
   },
   menuButton: {
-    // paddingTop: "5px",
-    // paddingBottom: "1px",
     color: "white",
-    marginTop: theme.spacing(-17),
+    marginTop: theme.spacing(-7),
     marginLeft: theme.spacing(43),
+  },
+  textButton: {
+    color: "blue",
+    marginTop: theme.spacing(-4),
+    marginLeft: theme.spacing(1),
+    height: theme.spacing(5),
   },
   
 }));
@@ -95,6 +123,11 @@ function Home({history}) {
           >
             <MenuIcon />
           </IconButton>
+          <Typography variant="body1" align="left" className={classes.textCard}>
+            Novedades Citibanamex
+          </Typography>
+          
+          
         </Grid>
       </Grid>
       <Grid container justify="center">
@@ -102,29 +135,44 @@ function Home({history}) {
           <Card>
             <CardActionArea>
               <CardContent>
-                <Typography variant="h5" component="h2">
-                  Cualquiera puede invertir.
+             
+                <Typography variant="body1" component="h2">
+                  <strong>Protege y crece tus ahorros</strong>
+                  <CardMedia
+                className={classes.coin}
+                image={lern}
+                title="Contemplative Reptile"
+                onClick={openCourses}
+              /> 
                 </Typography>
-                <Typography variant="h6" component="h2">
-                  ¡Nosotros te enseñamos!
-                </Typography>
+                {/* <CardMedia
+                className={classes.coin}
+                image={coin}
+                title="Contemplative Reptile"
+              /> */}
+                {/* <Button  className={classes.textButton} size="small" color="primary" onClick={openCourses}>
+                <strong>¡Aprende Aquí!</strong>
+              </Button> */}
+              {/* <CardMedia
+                className={classes.coinright}
+                image={coin}
+                title="Contemplative Reptile"
+              /> */}
               </CardContent>
             </CardActionArea>
             <CardActions>
               <CardMedia
-                className={classes.media}
-                image={blackrock}
+                className={classes.logs}
+                image={logs}
                 title="Contemplative Reptile"
               /> 
 
-              <Button size="small" color="primary" onClick={openCourses}>
-                Aprende Aquí
-              </Button>
-              <CardMedia
+              
+              {/* <CardMedia
                 className={classes.media}
                 image={banamex}
                 title="Contemplative Reptile"
-              />
+              /> */}
             </CardActions>
           </Card>
         </Grid>
@@ -192,14 +240,10 @@ function Home({history}) {
           </Card>
         </Grid>
       </Grid>
-      <br></br> <br></br> <br></br> <br></br> <br></br> 
-      <Grid container justify="center">
+      
+      <Grid container justify="center"  className={classes.root1}>
         <Grid item xs={10}>
-          <Card
-            classes={{
-              root: classes.root1, // class name, e.g. `classes-nesting-root-x`
-            }}
-          >
+         
             <CardActions>
               <CardMedia
                 className="transfer"
@@ -218,7 +262,7 @@ function Home({history}) {
                 onClick={openInv}
               />
             </CardActions>
-          </Card>
+         
         </Grid>
       </Grid>
     </div>

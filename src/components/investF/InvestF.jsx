@@ -7,9 +7,7 @@ import Negocio from "../../assets/images/Negocio.svg";
 import chevron_right from "../../assets/images/chevron_right.svg";
 import  NiveldeRiesgo from "../../assets/images/NiveldeRiesgo.svg";
 import Nr from "../../assets/images/Nr.svg";
-import ganancias from "../../assets/images/ganancias.svg";
-import catalogoFondos from "../../assets/images/catalogoFondos.svg";
-import agente from "../../assets/images/agente.svg";
+import Footer from '../Footer/Footer'
 import {AppBar, Toolbar, Typography, Grid, makeStyles, TextField } from '@material-ui/core'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
@@ -39,15 +37,15 @@ function InvestF({history}) {
       <div>
         <center>
             
-          <h1 className="p1"> ¿Quieres comenzar a invertir?</h1>
+          <h1 className="p1"> Comienza a invertir con...</h1>
         </center>
         <p className="p2"> Los favoritos para comenzar </p>
 
         <div className="card-fond">
         <div className="marg">
-          <strong>BLKGUB1</strong>
+          <span>para <strong style={{fontSize: '18px'}}>INICIAR</strong></span>
           <br></br>
-          para <strong>INICIAR</strong>
+          BLK1MAS
           <p>Aprende ganando</p>
           <p>Plazo mayor a 1 mes</p>
           </div>
@@ -77,9 +75,9 @@ function InvestF({history}) {
           <br></br>
           para <strong>TU NEGOCIO</strong>
           <p>
-            Genera tu propio<br></br> financiamiento
+            Genera tu propio<br></br> financiamiento <br></br> Plazo mas de 2 años
           </p>
-          <p>Plazo mas de 2 años</p>
+          {/* Plazo mas de 2 años */}
           </div>
           <img src={Negocio} className="casa" />
           <img src={Nr} className="ellips12" />
@@ -90,12 +88,7 @@ function InvestF({history}) {
         <p className="p">Encuentra el fondo para ti</p>
       </center>
 
-      <div className="menua">
-        <img src={ganancias} className="ganancias" />
-        <img src={catalogoFondos} className="catalogoFondos" />
-        <img src={agente} className="agente" />
-        
-      </div>
+      <Footer /> 
     </div>
   );
 }
