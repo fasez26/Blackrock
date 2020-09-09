@@ -331,11 +331,11 @@ position: absolute;
 width: 370px;
 height: 23px;
 left: 21px;
-top: 100px;
+top: 104px;
 font-family: Roboto;
 font-style: normal;
 font-weight: 500;
-font-size: 21px;
+font-size: 22px;
 line-height: 23px;
 color: #323232;
 }
@@ -381,7 +381,18 @@ bottom: 0%;
   color: #FFFFFF;
 }
 
+.cards-text{
+  color: #97999B; 
+  margin: 0px; 
+  font-size: 14.5px; 
+}
+
+flex-column{
+  display: flex;
+  flex-direction: row; 
+}
 .card-blkmas{
+  border-radius: 3px; 
 position: absolute;
 width: 370px;
 height: 135px;
@@ -389,6 +400,7 @@ left: 21px;
 top: 335px;
 background:white;
 box-shadow: 2px 2px 5px #999;
+margin-top: 10px; 
 }
 .casa{
 position: absolute;
@@ -398,6 +410,7 @@ left: 201px;
 top: 0px;
 }
 .gold{
+border-radius: 3px; 
 position: absolute;
 width: 370px;
 height: 135px;
@@ -405,26 +418,28 @@ left: 21px;
 top: 492px;
 background:white;
 box-shadow: 2px 2px 5px #999;
+margin-top: 8px; 
 }
 .marg{
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 15px;
 }
 
 .ellips{
 position: absolute;
-left: 40.88%;
+left: 160px;
 right: 51.93%;
-top: 40%;
+top: 58px;
 bottom: 25.19%;
+}
 
-}
 .ellips12{
-position: absolute;
-left: 40.88%;
-right: 51.93%;
-top: 40%;
-bottom: 25.19%;
+  position: absolute;
+  left: 160px;
+  right: 51.93%;
+  top: 60px;
+  bottom: 25.19%;
 }
+
 .ganancias{
 position: absolute;
 left: 8.95%;

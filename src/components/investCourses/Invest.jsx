@@ -1,25 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import { Theme, createStyles, makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles";
 import { Typography } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
 import video from "../../assets/images/video.svg";
-import back from "../../assets/images/back.svg";
+import test from "../../assets/images/garantia-o.svg";
 import "../../assets/styles/Styles.css";
 import { AppBar, Toolbar } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Button from "@material-ui/core/Button";
-import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import { blue } from "@material-ui/core/colors";
-import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles((theme) => ({
   textTitle: {
@@ -28,19 +20,15 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(5),
   },
   sizescards: {
-    // width: '20%',
-    // height: '20%',
-    width: theme.spacing(5),
-    height: theme.spacing(5),
+    width: theme.spacing(4),
+    height: theme.spacing(4),
     align: "left",
-    // margin: theme.spacing(5),
   },
   root1: {
     background:
       "linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(0,0,0,0) 0%)",
     borderRadius: 3,
     border: 1,
-    // color: "white",
     height: 100,
     padding: "0 30px",
   },
@@ -52,20 +40,15 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   heading: {
-    color: "#056DAE",
-    fontSize: theme.typography.pxToRem(17),
-    // fontWeight: theme.typography.fontWeightRegular,
+    // color: "#056DAE",
+    fontSize: theme.typography.pxToRem(15),
     fontFamily: "Roboto",
     height: theme.spacing(8),
-    // text-decoration-line: underline;
   },
   bullet: {
     display: "inline-block",
     margin: "0 2px",
     transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
   },
   pos: {
     marginBottom: 12,
@@ -73,33 +56,35 @@ const useStyles = makeStyles((theme) => ({
   accord: {
     width: 100,
     height: 30,
-    // align:'center',
     marginLeft: theme.spacing(10),
     marginTop: theme.spacing(1),
   },
   minutes: {
     marginTop: 23,
     width: "30%",
-    color: "#056DAE",
+    // color: "#056DAE",
+    fontSize: theme.typography.pxToRem(15),
   },
   title: {
-    // color: 000000,
     align: "center",
     margin: theme.spacing(3),
+  },
+  test:{
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+    marginLeft: theme.spacing(22.5),
+    marginTop: theme.spacing(2),
   },
 }));
 function Invest({ history }) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
   const openCourses = () => {
     history.push("/courses");
   };
-  // const [result, setResult] = useState(false);
-
-  // const showResult = () => {
-  //   setResult(true);
-  //   console.log("cambié", result);
-  // };
+  const openQuiz= () => {
+    history.push("/Quiz");
+  };
+  
   return (
     <div className="App maincontainer">
       <AppBar position="sticky" className={classes.header}>
@@ -111,27 +96,14 @@ function Invest({ history }) {
 
       <Grid container>
         <Grid item xs={12}>
-          <CardMedia className="x" image={back} title="Contemplative Reptile" />
-          <Typography variant="h6" align="center" className={classes.title} >
-             Elige el tema de tu interés.
+          <Typography variant="h6" align="center" className={classes.title}>
+            Elige el tema de tu interés.
           </Typography>
         </Grid>
       </Grid>
 
       <Grid container justify="center">
         <Grid item xs={11}>
-
-        {/* <Grid container spacing={3}>
-        <Grid item xs={6} sm={3}>
-          hola
-        </Grid>
-        <Grid item xs={6} sm={3}>
-         hola
-        </Grid>
-        <Grid item xs={6} sm={3}>
-         hola
-        </Grid>
-        </Grid> */}
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -139,23 +111,31 @@ function Invest({ history }) {
               id="panel1a-header"
               // onClick={showResult}
             >
-              <CardMedia
-                className={classes.sizescards}
-                image={video}
-                title="Contemplative Reptile"
-              />
-              <Typography
-                underline="always"
-                align="left"
-                className={classes.heading}
-              >
-                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
-                Lo que debes saber para empezar a invertir.
-                {/* </a> */}
-              </Typography>
-              <Typography align="left" className={classes.minutes}>
-                3.30 min
-              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={2} sm={2}>
+                  <CardMedia
+                    className={classes.sizescards}
+                    image={video}
+                    title="Contemplative Reptile"
+                  />
+                </Grid>
+                <Grid item xs={8} sm={8}>
+                  <Typography
+                    underline="always"
+                    align="left"
+                    className={classes.heading}
+                  >
+                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    Lo que debes saber para empezar a invertir.
+                   
+                  </Typography>
+                </Grid>
+                <Grid item xs={2} sm={2}>
+                  <Typography align="left" className={classes.minutes}>
+                    3.30 min
+                  </Typography>
+                </Grid>
+              </Grid>
             </AccordionSummary>
             <iframe
               width="360"
@@ -165,36 +145,49 @@ function Invest({ history }) {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
+             
+                    <CardMedia
+                    className={classes.test}
+                    image={test}
+                    title="Contemplative Reptile"
+                    onClick={openQuiz}
+                  />
+                    <a onClick={openQuiz} >Test
+                    </a>
           </Accordion>
 
-          <Accordion
-          // classes={{
-          //         root: classes.accord, // class name, e.g. `classes-nesting-root-x`
-          //       }}
-          >
+          <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
               // onClick={showResult}
             >
-              <CardMedia
-                className={classes.sizescards}
-                image={video}
-                title="Contemplative Reptile"
-              />
-              <Typography
-                underline="always"
-                align="left"
-                className={classes.heading}
-              >
-                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
-                ¿Qué perfil de inversionista tienes?
-                {/* </a> */}
-              </Typography>
-              <Typography align="left" className={classes.minutes}>
-                2.58 min
-              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={2} sm={2}>
+                  <CardMedia
+                    className={classes.sizescards}
+                    image={video}
+                    title="Contemplative Reptile"
+                  />
+                </Grid>
+                <Grid item xs={8} sm={8}>
+                  <Typography
+                    underline="always"
+                    align="left"
+                    className={classes.heading}
+                  >
+                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    ¿Qué perfil de inversionista tienes?
+                    {/* </a> */}
+                  </Typography>
+                </Grid>
+                <Grid item xs={2} sm={2}>
+                  <Typography align="left" className={classes.minutes}>
+                    2.58 min
+                  </Typography>
+                </Grid>
+              </Grid>
             </AccordionSummary>
             <iframe
               width="360"
@@ -206,34 +199,38 @@ function Invest({ history }) {
             ></iframe>
           </Accordion>
 
-          <Accordion
-          // classes={{
-          //         root: classes.accord, // class name, e.g. `classes-nesting-root-x`
-          //       }}
-          >
+          <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
               // onClick={showResult}
             >
-              <CardMedia
-                className={classes.sizescards}
-                image={video}
-                title="Contemplative Reptile"
-              />
-              <Typography
-                underline="always"
-                align="left"
-                className={classes.heading}
-              >
-                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
-                ¿Comó elegir una inversión?
-                {/* </a> */}
-              </Typography>
-              <Typography align="left" className={classes.minutes}>
-                3.48 min
-              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={2} sm={2}>
+                  <CardMedia
+                    className={classes.sizescards}
+                    image={video}
+                    title="Contemplative Reptile"
+                  />
+                </Grid>
+                <Grid item xs={8} sm={8}>
+                  <Typography
+                    underline="always"
+                    align="left"
+                    className={classes.heading}
+                  >
+                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    ¿Comó elegir una inversión?
+                    {/* </a> */}
+                  </Typography>
+                </Grid>
+                <Grid item xs={2} sm={2}>
+                  <Typography align="left" className={classes.minutes}>
+                    3.48 min
+                  </Typography>
+                </Grid>
+              </Grid>
             </AccordionSummary>
             <iframe
               width="360"
@@ -245,34 +242,38 @@ function Invest({ history }) {
             ></iframe>
           </Accordion>
 
-          <Accordion
-          // classes={{
-          //         root: classes.accord, // class name, e.g. `classes-nesting-root-x`
-          //       }}
-          >
+          <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
               // onClick={showResult}
             >
-              <CardMedia
-                className={classes.sizescards}
-                image={video}
-                title="Contemplative Reptile"
-              />
-              <Typography
-                underline="always"
-                align="left"
-                className={classes.heading}
-              >
-                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
-                ¿Qué son los rendimientos de una inversión?
-                {/* </a> */}
-              </Typography>
-              <Typography align="left" className={classes.minutes}>
-                2 min
-              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={2} sm={2}>
+                  <CardMedia
+                    className={classes.sizescards}
+                    image={video}
+                    title="Contemplative Reptile"
+                  />
+                </Grid>
+                <Grid item xs={8} sm={8}>
+                  <Typography
+                    underline="always"
+                    align="left"
+                    className={classes.heading}
+                  >
+                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    ¿Qué son los rendimientos de una inversión?
+                    {/* </a> */}
+                  </Typography>
+                </Grid>
+                <Grid item xs={2} sm={2}>
+                  <Typography align="left" className={classes.minutes}>
+                    2 min
+                  </Typography>
+                </Grid>
+              </Grid>
             </AccordionSummary>
             <iframe
               width="360"
@@ -284,34 +285,38 @@ function Invest({ history }) {
             ></iframe>
           </Accordion>
 
-          <Accordion
-          // classes={{
-          //         root: classes.accord, // class name, e.g. `classes-nesting-root-x`
-          //       }}
-          >
+          <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
               // onClick={showResult}
             >
-              <CardMedia
-                className={classes.sizescards}
-                image={video}
-                title="Contemplative Reptile"
-              />
-              <Typography
-                underline="always"
-                align="left"
-                className={classes.heading}
-              >
-                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
-                ¿Qué son los fondos de inversión?
-                {/* </a> */}
-              </Typography>
-              <Typography align="left" className={classes.minutes}>
-                3.7 min
-              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={2} sm={2}>
+                  <CardMedia
+                    className={classes.sizescards}
+                    image={video}
+                    title="Contemplative Reptile"
+                  />
+                </Grid>
+                <Grid item xs={8} sm={8}>
+                  <Typography
+                    underline="always"
+                    align="left"
+                    className={classes.heading}
+                  >
+                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    ¿Qué son los fondos de inversión?
+                    {/* </a> */}
+                  </Typography>
+                </Grid>
+                <Grid item xs={2} sm={2}>
+                  <Typography align="left" className={classes.minutes}>
+                    3.7 min
+                  </Typography>
+                </Grid>
+              </Grid>
             </AccordionSummary>
             <iframe
               width="360"
@@ -323,34 +328,38 @@ function Invest({ history }) {
             ></iframe>
           </Accordion>
 
-          <Accordion
-          // classes={{
-          //         root: classes.accord, // class name, e.g. `classes-nesting-root-x`
-          //       }}
-          >
+          <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
               // onClick={showResult}
             >
-              <CardMedia
-                className={classes.sizescards}
-                image={video}
-                title="Contemplative Reptile"
-              />
-              <Typography
-                underline="always"
-                align="left"
-                className={classes.heading}
-              >
-                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
-                ¿Qué es diversificar?
-                {/* </a> */}
-              </Typography>
-              <Typography align="left" className={classes.minutes}>
-                2 min
-              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={2} sm={2}>
+                  <CardMedia
+                    className={classes.sizescards}
+                    image={video}
+                    title="Contemplative Reptile"
+                  />
+                </Grid>
+                <Grid item xs={8} sm={8}>
+                  <Typography
+                    underline="always"
+                    align="left"
+                    className={classes.heading}
+                  >
+                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    ¿Qué es diversificar?
+                    {/* </a> */}
+                  </Typography>
+                </Grid>
+                <Grid item xs={2} sm={2}>
+                  <Typography align="left" className={classes.minutes}>
+                    2 min
+                  </Typography>
+                </Grid>
+              </Grid>
             </AccordionSummary>
             <iframe
               width="360"
@@ -362,34 +371,38 @@ function Invest({ history }) {
             ></iframe>
           </Accordion>
 
-          <Accordion
-          // classes={{
-          //         root: classes.accord, // class name, e.g. `classes-nesting-root-x`
-          //       }}
-          >
+          <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
               // onClick={showResult}
             >
-              <CardMedia
-                className={classes.sizescards}
-                image={video}
-                title="Contemplative Reptile"
-              />
-              <Typography
-                underline="always"
-                align="left"
-                className={classes.heading}
-              >
-                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
-                Conoce lo que hace el interés compuesto por tu dinero.
-                {/* </a> */}
-              </Typography>
-              <Typography align="left" className={classes.minutes}>
-                2 min
-              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={2} sm={2}>
+                  <CardMedia
+                    className={classes.sizescards}
+                    image={video}
+                    title="Contemplative Reptile"
+                  />
+                </Grid>
+                <Grid item xs={8} sm={8}>
+                  <Typography
+                    underline="always"
+                    align="left"
+                    className={classes.heading}
+                  >
+                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    Conoce lo que hace el interés compuesto por tu dinero.
+                    {/* </a> */}
+                  </Typography>
+                </Grid>
+                <Grid item xs={2} sm={2}>
+                  <Typography align="left" className={classes.minutes}>
+                    2 min
+                  </Typography>
+                </Grid>
+              </Grid>
             </AccordionSummary>
             <iframe
               width="360"
@@ -402,12 +415,6 @@ function Invest({ history }) {
           </Accordion>
         </Grid>
       </Grid>
-
-      {/* {result ? (
-        <div className="card-container">
-         hola
-        </div>
-      ) : null} */}
     </div>
   );
 }

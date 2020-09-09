@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PROYECTO "EDUCACION FINANCIERA" 
 
-## Available Scripts
 
-In the project directory, you can run:
+Desarrollo de plataforma con contenidos de educación financiera enfocados en fondos de
+inversión, que viva en la Aplicación Móvil de Citibanamex.
+Al tener una sección enfocada a la educación financiera en fondos de inversión para los
+clientes con acceso a la aplicación móvil de Citibanamex, miles de usuarios podrán
+entender conceptos que normalmente les parecen complicados en torno a inversiones
+(como puede ser el ahorro, la inversión, el interés compuesto, etc.) y específicamente en
+fondos de inversión; de esta forma podrán tener el entendimiento necesario sobre ellos y
+entonces, dar un paso adelante para pasar de ahorradores a inversionistas así poder
+alcanzar un mejor futuro financiero.
 
-### `npm start`
+### DESARROLLO
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A) CONTENIDO EDUCATIVO QUE DEBE ESTAR PRESENTE
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+● Ahorro versus Inversión: principales diferencias
+● Empezar a invertir: para qué buscamos invertir, cuánto quieres invertir, y el plazo
+en el que quieres alcanzar tus objetivos
+● Fondos de inversión: qué son los fondos de inversión y cuáles son los mitos detrás
+de ellos
+● Alianza entre Citibanamex y BlackRock.
+● Fondos disponibles: BLKGUB1, BLK1MAS, y fondo multiactivo GOLD 2
 
-### `npm test`
+B) TRABAJO EN TECNOLOGÍA
+I. Calculadora para que un inversionista pueda ver y comparar el comportamiento de
+fondos:
+● El usuario deberá poder especificar un monto de inversión en pesos y una fecha
+en el pasado, eligiendo uno o más de los tres fondos BLK (puede poner una
+cantidad diferente en cada fondo)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### DESCRIPCIÓN DE TECNOLOGÍAS
 
-### `npm run build`
+1. Se realizo esta aplicación con REACT.
+2. La parte del diseño se realizo con Material-UI.
+3. El proyecto funcionar correctamente en navegadores modernos
+(validado en Chrome e Internet Explorer)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Mockup
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### DESCARGA EL LINK DE LA APLICACIÓN
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### COLABORADORAS
 
-### `npm run eject`
+**FRONTEND**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+● Castillo Jessica
+    [Github](https://github.com/castillojessica)
+    [Linkedin](https://www.linkedin.com/in/castillojessicamonserrat/)
+● De la Peña Fernanda
+    [Github](https://github.com/keupa)
+    [Linkedin](https://www.linkedin.com/in/keupa/)
+● Flores Nallely 
+    [Github](https://github.com/fasez26)
+    [Linkedin](https://www.linkedin.com/in/ing-nallely-flores-martinez/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**UX**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+● Adonai Itzae L.H.
+    [Linkedin](https://www.linkedin.com/in/adonaiitzae/)

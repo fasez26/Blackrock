@@ -12,6 +12,7 @@ import Home from './components/homepage/Home';
 import CoursesMenu from './components/Courses/CoursesHome'
 import Invest from './components/investCourses/Invest';
 import InvestF from './components/investF/InvestF';
+import Quiz from './components/quiz/Quiz';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/courses' render={() => <CoursesMenu />} />
           <Route exact path='/Invest' render={() => <Invest />} />
           <Route exact path='/InvestF' render={() => <InvestF />} />
+          <Route exact path='/Quiz' render={() => <Quiz />} />
         </Switch>
       </Router>
 

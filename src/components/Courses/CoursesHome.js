@@ -88,7 +88,6 @@ function CoursesHome({ history }) {
       </AppBar>
       <Grid container>
         <Grid item xs={12}>
-          <CardMedia className="x" image={back} title="Contemplative Reptile" />
           <Typography variant="h6" align="center" className={classes.textTitle}>
             ¡Aprende y crece tu patrimonio!
           </Typography>

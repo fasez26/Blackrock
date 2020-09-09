@@ -119,7 +119,12 @@ const initialFormValues = {
 function Calculator() {
   const [values, setValues] = useState(initialFormValues);
   const [result, setResult] = useState(false);
+  const [titles, setTitles] = useState("")
   const [ganancia, setGanancia] = useState("");
+
+  const navBlkgub = parseInt(2.48)
+  const navBlkmas = parseInt(1.39)
+  const navGold = parseInt(1.51)
 
   let history = useHistory()
 
@@ -134,7 +139,24 @@ function Calculator() {
   const showResult = () => {
     setResult(true);
     formulaResult();
+    titlesQuantity();
   };
+
+  const titlesQuantity = () => {
+    if(values.investmentFund === 'BLKGUB1'){
+      let titleRes = navBlkgub/parseInt(values.initialAmount)
+      setTitles(titleRes.toFixed(6))
+    }
+    if(values.investmentFund === 'BLK1MAS'){
+      let titleRes = navBlkmas/parseInt(values.initialAmount)
+      setTitles(titleRes.toFixed(6))
+    }
+    if(values.investmentFund === 'GOLD2'){
+      let titleRes = navGold/parseInt(values.initialAmount)
+      setTitles(titleRes.toFixed(6))
+    }
+
+  }
 
   const formulaResult = () => {
     let res =
@@ -308,14 +330,14 @@ function Calculator() {
                     ></CardMedia>
                     <div className={classes.cardText}>
                       <Typography className={classes.titlesTypo}>
-                        NÚMERO DE TITULOS
+                        NÚMERO DE TÍTULOS
                       </Typography>
                       <div className={classes.titlesNumContent}>
                         <Typography
                           style={{
                             size: "14px",
                             fontWeight: "bold",
-                            marginRight: "30px",
+                            marginRight: "24px",
                           }}
                         >
                           {values.investmentFund}
@@ -327,17 +349,17 @@ function Calculator() {
                             color: "#6CBC06",
                           }}
                         >
-                          XXX
+                          {titles}
                         </Typography>
                         <Typography
-                          style={{ size: "14px", marginRight: "30px" }}
+                          style={{ size: "14px", marginRight: "26px" }}
                         >
                           DOLARES
                         </Typography>
                         <Typography
                           style={{ size: "14px", marginBottom: "5px" }}
                         >
-                          XX
+                          -
                         </Typography>
 
                         <Typography className={classes.titlesTypo}>
@@ -348,7 +370,7 @@ function Calculator() {
                           style={{
                             size: "14px",
                             fontWeight: "bold",
-                            marginRight: "30px",
+                            marginRight: "24px",
                           }}
                         >
                           {values.investmentFund}
@@ -360,17 +382,17 @@ function Calculator() {
                             color: "#6CBC06",
                           }}
                         >
-                          $ {ganancia}
+                          ${ganancia}
                         </Typography>
                         <Typography
-                          style={{ size: "14px", marginRight: "30px" }}
+                          style={{ size: "14px", marginRight: "24px" }}
                         >
                           DOLARES
                         </Typography>
                         <Typography
                           style={{ size: "14px", marginBottom: "5px" }}
                         >
-                          $ {values.initialAmount}
+                          ${values.initialAmount}
                         </Typography>
                       </div>
                     </div>
