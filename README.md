@@ -1,5 +1,5 @@
-## PROYECTO "EDUCACION FINANCIERA" 
 
+## PROYECTO "EDUCACION FINANCIERA" 
 
 Desarrollo de plataforma con contenidos de educación financiera enfocados en fondos de
 inversión, que viva en la Aplicación Móvil de Citibanamex.
@@ -15,7 +15,7 @@ alcanzar un mejor futuro financiero.
 
 A) CONTENIDO EDUCATIVO QUE DEBE ESTAR PRESENTE
 
-● Ahorro versus Inversión: principales diferencias
+● Ahorro versus Inversión: principales diferencias.
 ● Empezar a invertir: para qué buscamos invertir, cuánto quieres invertir, y el plazo
 en el que quieres alcanzar tus objetivos
 ● Fondos de inversión: qué son los fondos de inversión y cuáles son los mitos detrás

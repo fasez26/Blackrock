@@ -120,11 +120,21 @@ function Calculator() {
   const [values, setValues] = useState(initialFormValues);
   const [result, setResult] = useState(false);
   const [titles, setTitles] = useState("")
+  const [usd, setUsd] = useState("")
   const [ganancia, setGanancia] = useState("");
 
+  //  valores nav
   const navBlkgub = parseInt(2.48)
   const navBlkmas = parseInt(1.39)
   const navGold = parseInt(1.51)
+
+  // valores dolar
+  const usdToday = parseInt(21.46)
+  const usd28 = parseInt(22.29)
+  const usd90 = parseInt(22.47)
+  const usd180 = parseInt(21.93)
+  const usd360 = parseInt(19.52)
+  
 
   let history = useHistory()
 
@@ -133,14 +143,34 @@ function Calculator() {
 
   const goBack = () => {
     history.goBack()
-    console.log("voy de regreso");
   };
 
   const showResult = () => {
     setResult(true);
     formulaResult();
     titlesQuantity();
+    dollarProfits();
   };
+
+  const dollarProfits = () => {
+    let amount = parseInt(values.initialAmount)
+    if(values.date === "28"){
+    let usdRes = (amount/usd28)*usdToday
+    setUsd(usdRes.toFixed(2))
+    }
+    if(values.date==="90"){
+      let usdRes = (amount/usd90)*usdToday
+      setUsd(usdRes.toFixed(2))
+    }
+    if(values.date==="180"){
+      let usdRes = (amount/usd180)*usdToday
+      setUsd(usdRes.toFixed(2))
+    }
+    if(values.date==="360"){
+      let usdRes = (amount/usd180)*usdToday
+      setUsd(usdRes.toFixed(2))
+    }
+  }
 
   const titlesQuantity = () => {
     if(values.investmentFund === 'BLKGUB1'){
@@ -164,14 +194,12 @@ function Calculator() {
         parseInt(values.date) *
         parseInt(values.initialAmount) +
       parseInt(values.initialAmount);
-    console.log(res);
     setGanancia(res.toFixed(2));
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    console.log(values);
   };
 
   const classes = useStyles();
@@ -337,7 +365,7 @@ function Calculator() {
                           style={{
                             size: "14px",
                             fontWeight: "bold",
-                            marginRight: "24px",
+                            marginRight: "18px",
                           }}
                         >
                           {values.investmentFund}
@@ -352,7 +380,7 @@ function Calculator() {
                           {titles}
                         </Typography>
                         <Typography
-                          style={{ size: "14px", marginRight: "26px" }}
+                          style={{ size: "14px", marginRight: "21px" }}
                         >
                           DOLARES
                         </Typography>
@@ -370,7 +398,7 @@ function Calculator() {
                           style={{
                             size: "14px",
                             fontWeight: "bold",
-                            marginRight: "24px",
+                            marginRight: "15px",
                           }}
                         >
                           {values.investmentFund}
@@ -385,14 +413,14 @@ function Calculator() {
                           ${ganancia}
                         </Typography>
                         <Typography
-                          style={{ size: "14px", marginRight: "24px" }}
+                          style={{ size: "14px", marginRight: "18px" }}
                         >
                           DOLARES
                         </Typography>
                         <Typography
                           style={{ size: "14px", marginBottom: "5px" }}
                         >
-                          ${values.initialAmount}
+                          ${usd}
                         </Typography>
                       </div>
                     </div>

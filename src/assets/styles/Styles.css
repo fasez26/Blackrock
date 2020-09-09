@@ -83,7 +83,7 @@ left: 330px;
 top: 29px;
 }
 .fond{
-  background: #EEEEEE;
+  background: #F2F2F7;
   width: 415px;
   height: 832px;
 
@@ -255,7 +255,7 @@ h2.text1{
   justify-content: center;
   background-size: cover;
   height: 214px;
-  width:411px;
+  width:415px;
 }
 
 .text-mito{

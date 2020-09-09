@@ -19,181 +19,230 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormLabel from "@material-ui/core/FormLabel";
+import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
-  header: {
-    backgroundColor: "#136EAC",
-    paddingTop: "2em",
-  },
-  title: {
-    fontSize: theme.typography.pxToRem(18),
-    // marginLeft: theme.spacing(1),
-    marginTop: theme.spacing(3),
-    align: "center",
-    margin: theme.spacing(3),
-  },
-  sizescards: {
-    marginTop: theme.spacing(5),
-  },
-  question: {
-    marginLeft: theme.spacing(2),
-  },
-  formControl: {
-    margin: theme.spacing(3),
-  },
-  button: {
-    margin: theme.spacing(1, 1, 0, 0),
-  },
+    header: {
+        backgroundColor: "#136EAC",
+        paddingTop: "2em",
+    },
+    title: {
+        fontSize: theme.typography.pxToRem(18),
+        // marginLeft: theme.spacing(1),
+        marginTop: theme.spacing(3),
+        align: "center",
+        margin: theme.spacing(3),
+    },
+    sizescards: {
+        marginTop: theme.spacing(5),
+    },
+    question: {
+        marginLeft: theme.spacing(2),
+    },
+    formControl: {
+        margin: theme.spacing(3),
+    },
+    button: {
+        // margin: theme.spacing(1, 1, 0, 0),
+        align: "center",
+    },
+    helperText: {
+        color: "#F90D0D",
+        // marginLeft: theme.spacing(16),
+    },
+    helperText1: {
+        color: "#059B5C",
+        // marginLeft: theme.spacing(16),
+    },
 }));
 
 function Quiz({ history }) {
-  const classes = useStyles();
-  const [value, setValue] = React.useState("");
-  const [error, setError] = React.useState(false);
-  const [helperText, setHelperText] = React.useState("Elige un opción");
+    const classes = useStyles();
+    const [value, setValue] = React.useState("");
+    const [error, setError] = React.useState(false);
+    const [helperText, setHelperText] = React.useState("Elige un opción" , false);
+    const [next, setNext] = React.useState(false);
 
-  const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    setHelperText(" ");
-    setError(false);
-  };
+    const handleRadioChange = (event) => {
+        setValue(event.target.value);
+        setHelperText(" ");
+        setError(false);
+    };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-    if (value === "always") {
-      setHelperText("Correcto!");
-      setError(false);
-    } else if (value === "worst" || value === "best") {
-      setHelperText("Oops, respuesta incorrecta!");
-      setError(true);
-    } else {
-      setHelperText("Porfavor selecciona una opción.");
-      setError(true);
-    }
-  };
+        if (value === "always") {
+            setHelperText("Correcto!");
+           
+           
+            setError(false);
+            setNext(true)
+        } else if (value === "worst" || value === "best") {
+            setHelperText("Oops, respuesta incorrecta!");
+            setError(true);
+        } else {
+            setHelperText("Porfavor selecciona una opción.");
+            setError(true);
+        }
+    };
 
-  const openInvest = () => {
-    history.push("/Invest");
-  };
-  return (
-    <div className="App maincontainer">
-      <AppBar position="sticky" className={classes.header}>
-        <Toolbar>
-          <ArrowBackIosIcon onClick={openInvest}></ArrowBackIosIcon>
-          <Typography variant="h5">Test</Typography>
-        </Toolbar>
-      </AppBar>
+    const openInvest = () => {
+        history.push("/Invest");
+    };
+    return (
+        <div className="App maincontainer">
+            <AppBar position="sticky" className={classes.header}>
+                <Toolbar>
+                    <ArrowBackIosIcon onClick={openInvest}></ArrowBackIosIcon>
+                    <Typography variant="h5">Test</Typography>
+                </Toolbar>
+            </AppBar>
 
-      <Grid container>
-        <Grid item xs={12}>
-          <Typography variant="h6" align="center" className={classes.title}>
-            Lo que debes saber para empezar a invertir.
+            <Grid container>
+                <Grid item xs={12}>
+                    <Typography variant="h6" align="center" className={classes.title}>
+                        Lo que debes saber para empezar a invertir.
           </Typography>
-        </Grid>
-      </Grid>
-
-
-      <form onSubmit={handleSubmit}>
-      <Grid
-        container
-        justify="center"
-        // onClick={investpage}
-      >
-        <Grid item xs={10}>
-          <Card>
-            <CardActions>
-              <CardMedia
-                className={classes.sizescards}
-                // image={investIcon}
-                title="Contemplative Reptile"
-              />
-              <Typography align="left" variant="body1">
-                <strong>Pregunta número 1 - 3.</strong>
-              </Typography>
-            </CardActions>
-            <Typography
-              align="left"
-              variant="body1"
-              className={classes.question}
-            >
-              ¿Cuándo crees que sea el mejor tiempo de invertir?
-            </Typography>
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={6}>
-                <RadioGroup
-                  aria-label="quiz"
-                  name="quiz"
-                  value={value}
-                  onChange={handleRadioChange}
-                >
-                  <FormControlLabel
-                   className={classes.question}
-                    value="best"
-                    control={<Radio />}
-                    label="Cuándo tenga $10,000 pesos."
-                  />
-                </RadioGroup>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <RadioGroup
-                  aria-label="quiz"
-                  name="quiz"
-                  value={value}
-                  onChange={handleRadioChange}
-                >
-                  <FormControlLabel
-                  className={classes.question}
-                    value="worst"
-                    control={<Radio />}
-                    label="Cuándo tenga un buen trabajo."
-                  />
-                </RadioGroup>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <RadioGroup
-                  aria-label="quiz"
-                  name="quiz"
-                  value={value}
-                  onChange={handleRadioChange}
-                >
-                  <FormControlLabel
-                  className={classes.question}
-                    value="always"
-                    control={<Radio />}
-                    label="Siempre que te sea posible."
-                  />
-                </RadioGroup>
-              </Grid>
+                </Grid>
             </Grid>
-          </Card>
-        </Grid>
-      </Grid>
 
-   
-        <FormControl
-          component="fieldset"
-          error={error}
-          className={classes.formControl}
-        >
-          {/* <FormLabel component="legend">Pop quiz: Material-UI is...</FormLabel>
-        <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-          <FormControlLabel value="best" control={<Radio />} label="The best!" />
-          <FormControlLabel value="worst" control={<Radio />} label="The worst." />
-        </RadioGroup> */}
-          <FormHelperText>{helperText}</FormHelperText>
-          <Button
-            type="submit"
-            variant="outlined"
-            color="primary"
-            className={classes.button}
-          >
-            ACEPTAR
-          </Button>
-        </FormControl>
-      </form>
-    </div>
-  );
+            <form onSubmit={handleSubmit}>
+                <Grid
+                    container
+                    justify="center"
+                // onClick={investpage}
+                >
+                    <Grid item xs={10}>
+                        <Card>
+                            <CardActions>
+                                <CardMedia
+                                    className={classes.sizescards}
+                                    // image={investIcon}
+                                    title="Contemplative Reptile"
+                                />
+                                <Typography align="left" variant="body1">
+                                    <strong>Pregunta número 1 - 3.</strong>
+                                </Typography>
+                            </CardActions>
+                            <Typography
+                                align="left"
+                                variant="body1"
+                                className={classes.question}
+                            >
+                                ¿Cuándo crees que sea el mejor tiempo de invertir?
+              </Typography>
+                            <Grid container spacing={3}>
+                                <Grid item xs={12} sm={6}>
+                                    <RadioGroup
+                                        aria-label="quiz"
+                                        name="quiz"
+                                        value={value}
+                                        onChange={handleRadioChange}
+                                    >
+                                        <FormControlLabel
+                                            className={classes.question}
+                                            value="best"
+                                            control={<Radio />}
+                                            label="Cuándo tenga $10,000 pesos."
+                                        />
+                                    </RadioGroup>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <RadioGroup
+                                        aria-label="quiz"
+                                        name="quiz"
+                                        value={value}
+                                        onChange={handleRadioChange}
+                                    >
+                                        <FormControlLabel
+                                            className={classes.question}
+                                            value="worst"
+                                            control={<Radio />}
+                                            label="Cuándo tenga un buen trabajo."
+                                        />
+                                    </RadioGroup>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <RadioGroup
+                                        aria-label="quiz"
+                                        name="quiz"
+                                        value={value}
+                                        onChange={handleRadioChange}
+                                    >
+                                        <FormControlLabel
+                                            className={classes.question}
+                                            value="always"
+                                            control={<Radio />}
+                                            label="Siempre que te sea posible."
+                                        />
+                                    </RadioGroup>
+                                </Grid>
+
+                                <Grid item xs={12} sm={12}>
+                                    {
+                                        helperText ? (
+                                            <Typography
+                                                align="center"
+                                                variant="body1"
+                                                className={classes.helperText}
+                                            >
+                                                {helperText}
+                                            </Typography>
+                
+                        ) : (
+                                    <Typography
+                                        align="center"
+                                        variant="body1"
+                                        className={classes.helperText1}
+                                    >
+                                        {helperText}
+                                    </Typography>
+                                   
+                        )
+                    }
+
+                </Grid>
+
+                                <Grid item xs={12} sm={6}>
+                                    <FormControl
+                                        component="fieldset"
+                                        error={error}
+                                        className={classes.formControl}
+                                    >
+                                        {
+                                            next ? (
+                                                <Button
+                                                    type="submit"
+                                                    variant="outlined"
+                                                    color="primary"
+                                                    onClick={openInvest}
+                                                    className={classes.button}
+                                                >
+                                                    CONTINUAR
+                                                </Button>
+                                                
+                                            ) : (
+                                                    <Button
+                                                        type="submit"
+                                                        variant="outlined"
+                                                        color="primary"
+                                                        className={classes.button}
+                                                    >
+                                                        ACEPTAR
+                                                    </Button>
+                                                )
+                                        }
+
+                                    </FormControl>
+                                </Grid>
+                            </Grid>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </form>
+        </div>
+    );
 }
 
 export default withRouter(Quiz);
