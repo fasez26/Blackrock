@@ -10,7 +10,7 @@ import greencard from "../../assets/images/greencard.png";
 import bluecard from "../../assets/images/bluecard.png";
 import transfer from "../../assets/images/transfer.svg";
 import logs from "../../assets/images/logs.svg";
-import lern from "../../assets/images/lernHear.svg";
+import lern from "../../assets/images/coin.svg";
 import pay from "../../assets/images/pay.svg";
 import invest from "../../assets/images/invest.svg";
 import Grid from "@material-ui/core/Grid";
@@ -137,7 +137,7 @@ function Home({history}) {
               <CardContent>
              
                 <Typography variant="body1" component="h2">
-                  <strong>Protege y crece tus ahorros</strong>
+                  <strong>Gana dinero con tu dinero</strong>
                   <CardMedia
                 className={classes.coin}
                 image={lern}

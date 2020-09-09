@@ -20,7 +20,6 @@ import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormLabel from "@material-ui/core/FormLabel";
 import { red } from "@material-ui/core/colors";
-import right from "../../assets/images/right.svg";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -52,19 +51,13 @@ const useStyles = makeStyles((theme) => ({
     // marginLeft: theme.spacing(16),
   },
   helperText1: {
-   // color: "#059B5C",
+    color: "#059B5C",
     fontSize: theme.typography.pxToRem(25),
     // marginLeft: theme.spacing(16),
-  }, 
-  right:{
-    width: theme.spacing(3),
-    height: theme.spacing(3),
-    marginLeft: theme.spacing(5),
-    marginTop: theme.spacing(-4),
   },
 }));
 
-function Quiz({ history }) {
+function Quiz2({ history }) {
   const classes = useStyles();
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
@@ -81,13 +74,13 @@ function Quiz({ history }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (value === "always") {
-      setHelperText("¡Correcto!");
+    if (value === "best") {
+      setHelperText("Correcto!");
       setAnswer(true);
       setError(false);
       setNext(true);
-    } else if (value === "worst" || value === "best") {
-      setHelperText("Incorrecto. ¡Vuelve a intentarlo!");
+    } else if (value === "worst" || value === "always") {
+      setHelperText("Oops, respuesta incorrecta!");
       setError(true);
     } else {
       setHelperText("Porfavor selecciona una opción.");
@@ -99,9 +92,7 @@ function Quiz({ history }) {
     history.push("/Invest");
   };
 
-  const nextQuestion = () => {
-    history.push("/Quizz");
-  };
+  const nextQuestion = () => {};
   return (
     <div className="App maincontainer">
       <AppBar position="sticky" className={classes.header}>
@@ -134,7 +125,7 @@ function Quiz({ history }) {
                   title="Contemplative Reptile"
                 />
                 <Typography align="left" variant="body1">
-                  <strong>Pregunta número 1 - 2.</strong>
+                  <strong>Pregunta número 2 - 2.</strong>
                 </Typography>
               </CardActions>
               <Typography
@@ -142,7 +133,7 @@ function Quiz({ history }) {
                 variant="body1"
                 className={classes.question}
               >
-                ¿Cuándo crees que sea el mejor tiempo de invertir?
+                ¿Por qué es importante invertir?
               </Typography>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
@@ -156,7 +147,7 @@ function Quiz({ history }) {
                       className={classes.question}
                       value="best"
                       control={<Radio />}
-                      label="Cuándo tenga $10,000 pesos."
+                      label="Te ayuda a cumplir metas."
                     />
                   </RadioGroup>
                 </Grid>
@@ -171,7 +162,7 @@ function Quiz({ history }) {
                       className={classes.question}
                       value="worst"
                       control={<Radio />}
-                      label="Cuándo tenga un buen trabajo."
+                      label="Te ayuda a gastarte tu dinero."
                     />
                   </RadioGroup>
                 </Grid>
@@ -186,28 +177,19 @@ function Quiz({ history }) {
                       className={classes.question}
                       value="always"
                       control={<Radio />}
-                      label="Siempre que te sea posible."
+                      label="Te vuelve millonario."
                     />
                   </RadioGroup>
                 </Grid>
-                <Grid
-                      container
-                      justify="center"
-                      // onClick={investpage}
-                    >
-                <Grid item xs={9} sm={12}>
+
+                <Grid item xs={12} sm={12}>
                   {answer ? (
-                   
                     <Typography
                       align="center"
                       variant="body1"
                       className={classes.helperText1}
-                    ><br></br>
-                      {helperText}   <CardMedia
-                    className={classes.right}
-                    image={right}
-                    title="Contemplative Reptile"
-                  /> <br></br><Typography align='center'> Siempre que te sea posible puedes invertir no importa la edad o trabajo en que te desempeñes.</Typography>
+                    >
+                      {helperText}
                     </Typography>
                   ) : (
                     <Typography
@@ -218,7 +200,7 @@ function Quiz({ history }) {
                       {helperText}
                     </Typography>
                   )}
-                </Grid></Grid>
+                </Grid>
 
                 <Grid item xs={12} sm={6}>
                   <FormControl
@@ -257,4 +239,4 @@ function Quiz({ history }) {
   );
 }
 
-export default withRouter(Quiz);
+export default withRouter(Quiz2);
