@@ -1,10 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/styles";
-import { Button, Typography } from "@material-ui/core";
-import "../../assets/styles/Styles.css";
-import blackrock from "../../assets/images/blackrocklogo.png";
-import banamex from "../../assets/images/citibanamexlogo.png";
+import { Typography } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import MenuIcon from "@material-ui/icons/Menu";
+import IconButton from "@material-ui/core/IconButton";
 import redbanamex from "../../assets/images/redcitibanamex.png";
 import greencard from "../../assets/images/greencard.png";
 import bluecard from "../../assets/images/bluecard.png";
@@ -13,16 +18,7 @@ import logs from "../../assets/images/logs.svg";
 import lern from "../../assets/images/coin.svg";
 import pay from "../../assets/images/pay.svg";
 import invest from "../../assets/images/invest.svg";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton';
-import { blue } from "@material-ui/core/colors";
-
+import "../../assets/styles/Styles.css";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -34,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(11),
     height: theme.spacing(2),
     margin: theme.spacing(1),
-  },  
+  },
   textTitle: {
     color: "#fafafa",
     align: "center",
@@ -45,8 +41,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#fafafa",
     align: "center",
     margin: theme.spacing(3),
-    
-  }, 
+  },
   sizescards: {
     width: theme.spacing(10),
     height: theme.spacing(6),
@@ -65,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(40),
     height: theme.spacing(3),
     marginTop: theme.spacing(1),
-    marginLeft: theme.spacing(-.2),
+    marginLeft: theme.spacing(-0.2),
   },
   coinright: {
     width: theme.spacing(3),
@@ -76,9 +71,9 @@ const useStyles = makeStyles((theme) => ({
   textcard: {
     backgroundColor: "primary",
     align: "left",
-  },  
+  },
   root1: {
-    background: '#0076BE',
+    background: "#0076BE",
     borderRadius: 3,
     border: 1,
     marginTop: theme.spacing(10),
@@ -97,17 +92,16 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     height: theme.spacing(5),
   },
-  
 }));
 
-function Home({history}) {
+function Home({ history }) {
   const classes = useStyles();
   const openCourses = () => {
     history.push("/courses");
   };
-  const openInv = () =>{
+  const openInv = () => {
     history.push("/HomeSI");
-  }
+  };
   return (
     <div className="App container">
       <Grid container>
@@ -126,8 +120,6 @@ function Home({history}) {
           <Typography variant="body1" align="left" className={classes.textCard}>
             Novedades Citibanamex
           </Typography>
-          
-          
         </Grid>
       </Grid>
       <Grid container justify="center">
@@ -135,29 +127,15 @@ function Home({history}) {
           <Card>
             <CardActionArea>
               <CardContent>
-             
                 <Typography variant="body1" component="h2">
                   <strong>Gana dinero con tu dinero</strong>
                   <CardMedia
-                className={classes.coin}
-                image={lern}
-                title="Contemplative Reptile"
-                onClick={openCourses}
-              /> 
+                    className={classes.coin}
+                    image={lern}
+                    title="Contemplative Reptile"
+                    onClick={openCourses}
+                  />
                 </Typography>
-                {/* <CardMedia
-                className={classes.coin}
-                image={coin}
-                title="Contemplative Reptile"
-              /> */}
-                {/* <Button  className={classes.textButton} size="small" color="primary" onClick={openCourses}>
-                <strong>¡Aprende Aquí!</strong>
-              </Button> */}
-              {/* <CardMedia
-                className={classes.coinright}
-                image={coin}
-                title="Contemplative Reptile"
-              /> */}
               </CardContent>
             </CardActionArea>
             <CardActions>
@@ -165,14 +143,7 @@ function Home({history}) {
                 className={classes.logs}
                 image={logs}
                 title="Contemplative Reptile"
-              /> 
-
-              
-              {/* <CardMedia
-                className={classes.media}
-                image={banamex}
-                title="Contemplative Reptile"
-              /> */}
+              />
             </CardActions>
           </Card>
         </Grid>
@@ -240,29 +211,26 @@ function Home({history}) {
           </Card>
         </Grid>
       </Grid>
-      
-      <Grid container justify="center"  className={classes.root1}>
+      <Grid container justify="center" className={classes.root1}>
         <Grid item xs={10}>
-         
-            <CardActions>
-              <CardMedia
-                className="transfer"
-                image={transfer}
-                title="Contemplative Reptile"
-              />
-              <CardMedia
-                className="pay"
-                image={pay}
-                title="Contemplative Reptile"
-              />
-              <CardMedia
-                className="invest"
-                image={invest}
-                title="Contemplative Reptile"
-                onClick={openInv}
-              />
-            </CardActions>
-         
+          <CardActions>
+            <CardMedia
+              className="transfer"
+              image={transfer}
+              title="Contemplative Reptile"
+            />
+            <CardMedia
+              className="pay"
+              image={pay}
+              title="Contemplative Reptile"
+            />
+            <CardMedia
+              className="invest"
+              image={invest}
+              title="Contemplative Reptile"
+              onClick={openInv}
+            />
+          </CardActions>
         </Grid>
       </Grid>
     </div>

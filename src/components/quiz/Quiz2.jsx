@@ -6,20 +6,13 @@ import { Typography } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormLabel from "@material-ui/core/FormLabel";
-import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -28,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: theme.typography.pxToRem(18),
-    // marginLeft: theme.spacing(1),
     marginTop: theme.spacing(3),
     align: "center",
     margin: theme.spacing(3),
@@ -43,17 +35,14 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3),
   },
   button: {
-    // margin: theme.spacing(1, 1, 0, 0),
     align: "center",
   },
   helperText: {
     color: "#F90D0D",
-    // marginLeft: theme.spacing(16),
   },
   helperText1: {
     color: "#059B5C",
     fontSize: theme.typography.pxToRem(25),
-    // marginLeft: theme.spacing(16),
   },
 }));
 
@@ -91,7 +80,6 @@ function Quiz2({ history }) {
   const openInvest = () => {
     history.push("/Invest");
   };
-  
 
   const openHome = () => {
     history.push("/");
@@ -114,17 +102,12 @@ function Quiz2({ history }) {
       </Grid>
 
       <form onSubmit={handleSubmit}>
-        <Grid
-          container
-          justify="center"
-          // onClick={investpage}
-        >
+        <Grid container justify="center">
           <Grid item xs={10}>
             <Card>
               <CardActions>
                 <CardMedia
                   className={classes.sizescards}
-                  // image={investIcon}
                   title="Contemplative Reptile"
                 />
                 <Typography align="left" variant="body1">

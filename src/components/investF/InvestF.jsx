@@ -1,36 +1,33 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "../../assets/styles/Styles.css";
-import Youth from "../../assets/images/PlantaCreciendo.svg";
-import Casa from "../../assets/images/ProbarCoin.svg";
-import Negocio from "../../assets/images/Casita.svg";
-import DM from "../../assets/images/DM.svg";
-import MA from "../../assets/images/MA.svg";
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Footer from "../Footer/Footer";
 import {
   AppBar,
   Toolbar,
   Typography,
-  Grid,
   makeStyles,
-  TextField,
 } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import Youth from "../../assets/images/PlantaCreciendo.svg";
+import Casa from "../../assets/images/ProbarCoin.svg";
+import Negocio from "../../assets/images/Casita.svg";
+import DM from "../../assets/images/DM.svg";
+import MA from "../../assets/images/MA.svg";
+import "../../assets/styles/Styles.css";
 
 const useStyles = makeStyles((theme) => ({
-  fwd:{
-    position: 'absolute',
-    top: '55px',
-    left: '345px',
-    zIndex: '8',
-    color: '#00BDF2'
+  fwd: {
+    position: "absolute",
+    top: "55px",
+    left: "345px",
+    zIndex: "8",
+    color: "#00BDF2",
   },
   header: {
     backgroundColor: "#136EAC",
     paddingTop: "2em",
   },
-
 }));
 function InvestF({ history }) {
   const classes = useStyles();
@@ -45,13 +42,11 @@ function InvestF({ history }) {
           <Typography variant="h5">Fondos de Inversión</Typography>
         </Toolbar>
       </AppBar>
-
       <div>
         <center>
           <h1 className="p1"> Comienza a invertir con...</h1>
         </center>
         <p className="p2"> Los favoritos para comenzar </p>
-
         <div className="card-fond">
           <div className="marg">
             <span>
@@ -82,11 +77,9 @@ function InvestF({ history }) {
           <img src={DM} className="ellips" />
           <ArrowForwardIosIcon className={classes.fwd}></ArrowForwardIosIcon>
           <img src={Youth} className="youth" />
-          
         </div>
-
         <div className="card-blkmas">
-        <div className="marg">
+          <div className="marg">
             <span>
               Para <strong style={{ fontSize: "18px" }}>INICIAR</strong>
             </span>
@@ -115,11 +108,9 @@ function InvestF({ history }) {
           <img src={DM} className="ellips" />
           <ArrowForwardIosIcon className={classes.fwd}></ArrowForwardIosIcon>
           <img src={Youth} className="youth" />
-          
         </div>
-
         <div className="card-blkmas">
-        <div className="marg">
+          <div className="marg">
             <span>
               Para <strong style={{ fontSize: "18px" }}>AHORRAR</strong>
             </span>
@@ -148,9 +139,9 @@ function InvestF({ history }) {
           <img src={DM} className="ellips" />
           <ArrowForwardIosIcon className={classes.fwd}></ArrowForwardIosIcon>
           <img src={Casa} className="casa" />
-          
-        </div> <div className="gold">
-        <div className="marg">
+        </div>{" "}
+        <div className="gold">
+          <div className="marg">
             <span>
               Para <strong style={{ fontSize: "18px" }}>tu CASA</strong>
             </span>
@@ -179,15 +170,11 @@ function InvestF({ history }) {
           <img src={MA} className="ellips12" />
           <ArrowForwardIosIcon className={classes.fwd}></ArrowForwardIosIcon>
           <img src={Negocio} className="youth" />
-          
         </div>
-
-      
-      <center>
-        <p className="p">Encuentra el fondo para ti</p>
-      </center>
-
-      <Footer />
+        <center>
+          <p className="p">Encuentra el fondo para ti</p>
+        </center>
+        <Footer />
       </div>
     </div>
   );

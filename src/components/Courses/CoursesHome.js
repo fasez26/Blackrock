@@ -1,26 +1,20 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/styles";
-import { Button, Typography } from "@material-ui/core";
-import "../../assets/styles/Styles.css";
+import { Typography } from "@material-ui/core";
+import { AppBar, Toolbar } from "@material-ui/core";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardMedia from "@material-ui/core/CardMedia";
 import investIcon from "../../assets/images/invest-icon.svg";
-import back from "../../assets/images/back.svg";
 import pig from "../../assets/images/pig.svg";
 import insurance from "../../assets/images/insurance.svg";
 import icoCard from "../../assets/images/icoCard.svg";
 import home from "../../assets/images/home-o.svg";
 import icomoney from "../../assets/images/icomoney.svg";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import transfer from "../../assets/images/transfer.svg";
-import pay from "../../assets/images/pay.svg";
-import invest from "../../assets/images/invest.svg";
-import { AppBar, Toolbar } from "@material-ui/core";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import "../../assets/styles/Styles.css";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -34,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   textTitle: {
-    // color: 000000,
     align: "center",
     margin: theme.spacing(3),
   },
@@ -210,34 +203,6 @@ function CoursesHome({ history }) {
           </Card>
         </Grid>
       </Grid>
-      {/* <br></br> <br></br> <br></br> 
-      <Grid container justify="center">
-        <Grid item xs={10}>
-          <Card
-            classes={{
-              root: classes.root1, // class name, e.g. `classes-nesting-root-x`
-            }}
-          >
-            <CardActions>
-              <CardMedia
-                className="transfer"
-                image={transfer}
-                title="Contemplative Reptile"
-              />
-              <CardMedia
-                className="pay"
-                image={pay}
-                title="Contemplative Reptile"
-              />
-              <CardMedia
-                className="invest"
-                image={invest}
-                title="Contemplative Reptile"
-              />
-            </CardActions>
-          </Card>
-        </Grid>
-      </Grid> */}
     </div>
   );
 }

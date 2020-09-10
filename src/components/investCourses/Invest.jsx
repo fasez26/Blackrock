@@ -3,15 +3,15 @@ import { withRouter } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/styles";
 import { Typography } from "@material-ui/core";
-import CardMedia from "@material-ui/core/CardMedia";
-import video from "../../assets/images/video.svg";
-import test from "../../assets/images/garantia-o.svg";
-import "../../assets/styles/Styles.css";
 import { AppBar, Toolbar } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import CardMedia from "@material-ui/core/CardMedia";
+import video from "../../assets/images/video.svg";
+import test from "../../assets/images/garantia-o.svg";
+import "../../assets/styles/Styles.css";
 
 const useStyles = makeStyles((theme) => ({
   textTitle: {
@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   heading: {
-    // color: "#056DAE",
     fontSize: theme.typography.pxToRem(15),
     fontFamily: "Roboto",
     height: theme.spacing(8),
@@ -62,14 +61,13 @@ const useStyles = makeStyles((theme) => ({
   minutes: {
     marginTop: 23,
     width: "30%",
-    // color: "#056DAE",
     fontSize: theme.typography.pxToRem(15),
   },
   title: {
     align: "center",
     margin: theme.spacing(3),
   },
-  test:{
+  test: {
     width: theme.spacing(3),
     height: theme.spacing(3),
     marginLeft: theme.spacing(22.5),
@@ -81,10 +79,10 @@ function Invest({ history }) {
   const openCourses = () => {
     history.push("/courses");
   };
-  const openQuiz= () => {
+  const openQuiz = () => {
     history.push("/Quiz");
   };
-  
+
   return (
     <div className="App maincontainer">
       <AppBar position="sticky" className={classes.header}>
@@ -93,7 +91,6 @@ function Invest({ history }) {
           <Typography variant="h5">Inversiones</Typography>
         </Toolbar>
       </AppBar>
-
       <Grid container>
         <Grid item xs={12}>
           <Typography variant="h6" align="center" className={classes.title}>
@@ -101,7 +98,6 @@ function Invest({ history }) {
           </Typography>
         </Grid>
       </Grid>
-
       <Grid container justify="center">
         <Grid item xs={11}>
           <Accordion>
@@ -109,7 +105,6 @@ function Invest({ history }) {
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              // onClick={showResult}
             >
               <Grid container spacing={3}>
                 <Grid item xs={2} sm={2}>
@@ -125,9 +120,7 @@ function Invest({ history }) {
                     align="left"
                     className={classes.heading}
                   >
-                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
                     Lo que debes saber para empezar a invertir.
-                   
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={2}>
@@ -145,23 +138,19 @@ function Invest({ history }) {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
-             
-                    <CardMedia
-                    className={classes.test}
-                    image={test}
-                    title="Contemplative Reptile"
-                    onClick={openQuiz}
-                  />
-                    <a onClick={openQuiz} >Test
-                    </a>
+            <CardMedia
+              className={classes.test}
+              image={test}
+              title="Contemplative Reptile"
+              onClick={openQuiz}
+            />
+            <a onClick={openQuiz}>Test</a>
           </Accordion>
-
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              // onClick={showResult}
             >
               <Grid container spacing={3}>
                 <Grid item xs={2} sm={2}>
@@ -177,9 +166,7 @@ function Invest({ history }) {
                     align="left"
                     className={classes.heading}
                   >
-                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
                     ¿Qué perfil de inversionista tienes?
-                    {/* </a> */}
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={2}>
@@ -198,13 +185,11 @@ function Invest({ history }) {
               allowfullscreen
             ></iframe>
           </Accordion>
-
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              // onClick={showResult}
             >
               <Grid container spacing={3}>
                 <Grid item xs={2} sm={2}>
@@ -220,9 +205,7 @@ function Invest({ history }) {
                     align="left"
                     className={classes.heading}
                   >
-                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
                     ¿Comó elegir una inversión?
-                    {/* </a> */}
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={2}>
@@ -241,13 +224,11 @@ function Invest({ history }) {
               allowfullscreen
             ></iframe>
           </Accordion>
-
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              // onClick={showResult}
             >
               <Grid container spacing={3}>
                 <Grid item xs={2} sm={2}>
@@ -263,9 +244,7 @@ function Invest({ history }) {
                     align="left"
                     className={classes.heading}
                   >
-                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
                     ¿Qué son los rendimientos de una inversión?
-                    {/* </a> */}
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={2}>
@@ -284,13 +263,11 @@ function Invest({ history }) {
               allowfullscreen
             ></iframe>
           </Accordion>
-
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              // onClick={showResult}
             >
               <Grid container spacing={3}>
                 <Grid item xs={2} sm={2}>
@@ -306,9 +283,7 @@ function Invest({ history }) {
                     align="left"
                     className={classes.heading}
                   >
-                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
                     ¿Qué son los fondos de inversión?
-                    {/* </a> */}
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={2}>
@@ -327,13 +302,11 @@ function Invest({ history }) {
               allowfullscreen
             ></iframe>
           </Accordion>
-
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              // onClick={showResult}
             >
               <Grid container spacing={3}>
                 <Grid item xs={2} sm={2}>
@@ -349,9 +322,8 @@ function Invest({ history }) {
                     align="left"
                     className={classes.heading}
                   >
-                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
+                    {" "}
                     ¿Qué es diversificar?
-                    {/* </a> */}
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={2}>
@@ -370,13 +342,11 @@ function Invest({ history }) {
               allowfullscreen
             ></iframe>
           </Accordion>
-
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
-              // onClick={showResult}
             >
               <Grid container spacing={3}>
                 <Grid item xs={2} sm={2}>
@@ -392,9 +362,7 @@ function Invest({ history }) {
                     align="left"
                     className={classes.heading}
                   >
-                    {/* <a rel="noopener noreferrer" target="_blank" href="https://www.banamex.com/sitios/educacion-financiera/cursos-de-educacion-financiera/lecciones-de-educacion-financiera.html?leccion=1171" */}
                     Conoce lo que hace el interés compuesto por tu dinero.
-                    {/* </a> */}
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={2}>

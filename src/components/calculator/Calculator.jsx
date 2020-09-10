@@ -7,7 +7,6 @@ import {
   Toolbar,
   Typography,
   Card,
-  CardActions,
   CardContent,
   Grid,
   makeStyles,
@@ -17,15 +16,11 @@ import {
   InputAdornment,
   MenuItem,
   Box,
-  TextField,
-  FormControl,
   Button,
   Tabs,
   Tab,
   CardMedia,
-  Paper,
 } from "@material-ui/core";
-import { sizing } from "@material-ui/system";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import StackedCoins from "../../assets/images/coins2.svg";
 
@@ -120,7 +115,7 @@ function Calculator() {
   const [values, setValues] = useState(initialFormValues);
   const [result, setResult] = useState(false);
   const [titles, setTitles] = useState("");
-  const [ganancia, setGanancia] = useState("")
+  const [ganancia, setGanancia] = useState("");
   const [usd, setUsd] = useState("");
   const [usdTitles, setUsdTitles] = useState("");
 
@@ -141,55 +136,55 @@ function Calculator() {
 
   const blkProfits = () => {
     if (values.investmentFund === "BLKGUB1" && values.date === "28") {
-      let res = (parseInt(values.initialAmount)/2.328255)*2.330567
+      let res = (parseInt(values.initialAmount) / 2.328255) * 2.330567;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "BLKGUB1" && values.date === "90") {
-      let res = (parseInt(values.initialAmount)/2.317759)*2.330567
+      let res = (parseInt(values.initialAmount) / 2.317759) * 2.330567;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "BLKGUB1" && values.date === "180") {
-      let res = (parseInt(values.initialAmount)/2.297849)*2.330567
+      let res = (parseInt(values.initialAmount) / 2.297849) * 2.330567;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "BLKGUB1" && values.date === "360") {
-      let res = (parseInt(values.initialAmount)/2.27226)*2.330567
+      let res = (parseInt(values.initialAmount) / 2.27226) * 2.330567;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "BLK1MAS" && values.date === "28") {
-      let res = (parseInt(values.initialAmount)/1.36333)*1.423958
+      let res = (parseInt(values.initialAmount) / 1.36333) * 1.423958;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "BLK1MAS" && values.date === "90") {
-      let res = (parseInt(values.initialAmount)/1.349068)*1.423958
+      let res = (parseInt(values.initialAmount) / 1.349068) * 1.423958;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "BLK1MAS" && values.date === "180") {
-      let res = (parseInt(values.initialAmount)/1.328557)*1.423958
+      let res = (parseInt(values.initialAmount) / 1.328557) * 1.423958;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "BLK1MAS" && values.date === "360") {
-      let res = (parseInt(values.initialAmount)/1.321398)*1.423958
+      let res = (parseInt(values.initialAmount) / 1.321398) * 1.423958;
       setGanancia(res.toFixed(2));
     }
 
     if (values.investmentFund === "GOLD2" && values.date === "28") {
-      let res = (parseInt(values.initialAmount)/1.56651)*1.56629
+      let res = (parseInt(values.initialAmount) / 1.56651) * 1.56629;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "GOLD2" && values.date === "90") {
-      let res = (parseInt(values.initialAmount)/1.549473)*1.423958
+      let res = (parseInt(values.initialAmount) / 1.549473) * 1.423958;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "GOLD2" && values.date === "180") {
-      let res = (parseInt(values.initialAmount)/1.393334)*1.423958
+      let res = (parseInt(values.initialAmount) / 1.393334) * 1.423958;
       setGanancia(res.toFixed(2));
     }
     if (values.investmentFund === "GOLD2" && values.date === "360") {
-      let res = (parseInt(values.initialAmount)/1.21932)*1.423958
+      let res = (parseInt(values.initialAmount) / 1.21932) * 1.423958;
       setGanancia(res.toFixed(2));
     }
-  }
+  };
 
   const dollarTitles = () => {
     let amt = parseInt(values.initialAmount);
@@ -296,8 +291,13 @@ function Calculator() {
       </AppBar>
       <div className="top-container">
         <Grid container justify="center">
-          <Typography variant="body1" align="center" style={{ padding: "2em 20px 0px 30px", fontWeight: 'bold' }}>
-          Conoce cuanto habrías ganado ayer de haber invertido en nuestros fondos BLK.
+          <Typography
+            variant="body1"
+            align="center"
+            style={{ padding: "2em 20px 0px 30px", fontWeight: "bold" }}
+          >
+            Conoce cuanto habrías ganado ayer de haber invertido en nuestros
+            fondos BLK.
           </Typography>
         </Grid>
 
@@ -441,7 +441,7 @@ function Calculator() {
                     ></CardMedia>
                     <div className={classes.cardText}>
                       <Typography className={classes.titlesTypo}>
-                        NÚMERO DE TÍTULOS 
+                        NÚMERO DE TÍTULOS
                       </Typography>
                       <div className={classes.titlesNumContent}>
                         <Typography

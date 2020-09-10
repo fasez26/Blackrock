@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "../../assets/styles/Styles.css";
 import ganancias from "../../assets/images/ganancias.svg";
 import catalogoFondos from "../../assets/images/catalogoFondos.svg";
 import agente from "../../assets/images/agente.svg";
+import "../../assets/styles/Styles.css";
 
 function Footer(){
     return(
