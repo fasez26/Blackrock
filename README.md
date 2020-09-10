@@ -1,6 +1,8 @@
-![LogoBlack](https://i.ibb.co/XZ94JDq/Black-Rock-negro-sf-1.jpg)
-![LogoLab](https://i.ibb.co/HptqTP6/laboratoria.png)
-![LogoCity](https://i.ibb.co/jhpQjcT/citibanamex-logo.jpg)
+<p align="center">
+  <img  src="https://i.ibb.co/HptqTP6/laboratoria.png">
+</p>
+
+![Logo_BlackRock_Citibanamex](https://i.imgur.com/RgUi4k8.jpeg)
 
 ## PROYECTO "EDUCACIÓN FINANCIERA" 
 
@@ -37,14 +39,17 @@ cantidad diferente en cada fondo)
 
 ### DESCRIPCIÓN DE TECNOLOGÍAS
 
-1. Se realizo esta aplicación con REACT.
-2. La parte del diseño se realizo con Material-UI.
-3. El proyecto funciona correctamente en navegadores modernos
-(validado en Chrome e Internet Explorer).
-4. El prototipo de la plataforma se realizo con Figma.
+Se utilizaron las siguientes tecnologías para el desarrollo del proyecto: 
+
+1. Figma para el prototipado en alta resolución. 
+2. React como entorno de desarrollo de la SPA. 
+3. Material UI como framework de diseño. 
+
+El proyecto funciona correctamente en navegadores modernos (validado en Chrome y Edge) 
+
 
 ### MOCKUP
-![Alt Text](https://media.giphy.com/media/TjLyrUk3ltzStTdlZM/giphy.gif)
+![Mockup](https://media4.giphy.com/media/fWAGajiPM0VSmmQE2o/giphy.gif)
 
 ### LINK DE LA APLICACIÓN
 
