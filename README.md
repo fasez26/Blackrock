@@ -44,6 +44,7 @@ cantidad diferente en cada fondo)
 4. El prototipo de la plataforma se realizo con Figma.
 
 ### MOCKUP
+![Alt Text](https://media.giphy.com/media/TjLyrUk3ltzStTdlZM/giphy.gif)
 
 ### LINK DE LA APLICACIÓN
 
