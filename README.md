@@ -2,7 +2,7 @@
 ![LogoLab](https://i.ibb.co/HptqTP6/laboratoria.png)
 ![LogoCity](https://i.ibb.co/jhpQjcT/citibanamex-logo.jpg)
 
-## PROYECTO "EDUCACION FINANCIERA" 
+## PROYECTO "EDUCACIÓN FINANCIERA" 
 
 Desarrollo de plataforma con contenidos de educación financiera enfocados en fondos de
 inversión, que viva en la Aplicación Móvil de Citibanamex.
