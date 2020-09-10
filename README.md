@@ -48,6 +48,8 @@ cantidad diferente en cada fondo)
 
 ### LINK DE LA APLICACIÓN
 
+[BlackRock](https://blackrock-citibanamex.netlify.app/)
+
 ### COLABORADORAS
 
 **FRONTEND**
