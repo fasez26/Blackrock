@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import "./calculator.css";
-import Footer from '../Footer/Footer'
+import Footer from "../Footer/Footer";
 import {
   AppBar,
   Toolbar,
@@ -27,7 +27,7 @@ import {
 } from "@material-ui/core";
 import { sizing } from "@material-ui/system";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import StackedCoins from "../../assets/images/stacked-coins.svg";
+import StackedCoins from "../../assets/images/coins2.svg";
 
 const useStyles = makeStyles({
   cardContainer: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles({
   coins: {
     height: "120px",
     width: "120px",
-    marginTop: "25px",
+    marginTop: "23px",
   },
   label: {
     paddingBottom: "9px",
@@ -119,83 +119,166 @@ const initialFormValues = {
 function Calculator() {
   const [values, setValues] = useState(initialFormValues);
   const [result, setResult] = useState(false);
-  const [titles, setTitles] = useState("")
-  const [usd, setUsd] = useState("")
-  const [ganancia, setGanancia] = useState("");
+  const [titles, setTitles] = useState("");
+  const [ganancia, setGanancia] = useState("")
+  const [usd, setUsd] = useState("");
+  const [usdTitles, setUsdTitles] = useState("");
 
-  //  valores nav
-  const navBlkgub = parseInt(2.48)
-  const navBlkmas = parseInt(1.39)
-  const navGold = parseInt(1.51)
-
-  // valores dolar
-  const usdToday = parseInt(21.46)
-  const usd28 = parseInt(22.29)
-  const usd90 = parseInt(22.47)
-  const usd180 = parseInt(21.93)
-  const usd360 = parseInt(19.52)
-  
-
-  let history = useHistory()
-
-  const percent = parseInt(1.7);
-  const dollar = parseInt(21.58);
+  let history = useHistory();
 
   const goBack = () => {
-    history.goBack()
+    history.goBack();
   };
 
   const showResult = () => {
+    setResult(false);
     setResult(true);
-    formulaResult();
-    titlesQuantity();
+    blkProfits();
+    dollarTitles();
     dollarProfits();
+    titlesQuantity();
+  };
+
+  const blkProfits = () => {
+    if (values.investmentFund === "BLKGUB1" && values.date === "28") {
+      let res = (parseInt(values.initialAmount)/2.328255)*2.330567
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "BLKGUB1" && values.date === "90") {
+      let res = (parseInt(values.initialAmount)/2.317759)*2.330567
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "BLKGUB1" && values.date === "180") {
+      let res = (parseInt(values.initialAmount)/2.297849)*2.330567
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "BLKGUB1" && values.date === "360") {
+      let res = (parseInt(values.initialAmount)/2.27226)*2.330567
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "28") {
+      let res = (parseInt(values.initialAmount)/1.36333)*1.423958
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "90") {
+      let res = (parseInt(values.initialAmount)/1.349068)*1.423958
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "180") {
+      let res = (parseInt(values.initialAmount)/1.328557)*1.423958
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "360") {
+      let res = (parseInt(values.initialAmount)/1.321398)*1.423958
+      setGanancia(res.toFixed(2));
+    }
+
+    if (values.investmentFund === "GOLD2" && values.date === "28") {
+      let res = (parseInt(values.initialAmount)/1.56651)*1.56629
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "GOLD2" && values.date === "90") {
+      let res = (parseInt(values.initialAmount)/1.549473)*1.423958
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "GOLD2" && values.date === "180") {
+      let res = (parseInt(values.initialAmount)/1.393334)*1.423958
+      setGanancia(res.toFixed(2));
+    }
+    if (values.investmentFund === "GOLD2" && values.date === "360") {
+      let res = (parseInt(values.initialAmount)/1.21932)*1.423958
+      setGanancia(res.toFixed(2));
+    }
+  }
+
+  const dollarTitles = () => {
+    let amt = parseInt(values.initialAmount);
+    if (values.date === "28") {
+      let usdTitlesQ = amt / 22.2588;
+      setUsdTitles(usdTitlesQ.toFixed(2));
+    } else if (values.date === "90") {
+      let usdTitlesQ = amt / 21.676;
+      setUsdTitles(usdTitlesQ.toFixed(2));
+    } else if (values.date === "180") {
+      let usdTitlesQ = amt / 21.3114;
+      setUsdTitles(usdTitlesQ.toFixed(2));
+    } else if (values.date === "360") {
+      let usdTitlesQ = amt / 21.4004;
+      setUsdTitles(usdTitlesQ.toFixed(2));
+    }
   };
 
   const dollarProfits = () => {
-    let amount = parseInt(values.initialAmount)
-    if(values.date === "28"){
-    let usdRes = (amount/usd28)*usdToday
-    setUsd(usdRes.toFixed(2))
+    let amount = parseInt(values.initialAmount);
+    if (values.date === "28") {
+      let usdRes = (amount / 22.2588) * 21.3402;
+      setUsd(usdRes.toFixed(2));
+    } else if (values.date === "90") {
+      let usdRes = (amount / 21.676) * 21.3402;
+      setUsd(usdRes.toFixed(2));
+    } else if (values.date === "180") {
+      let usdRes = (amount / 21.3114) * 21.3402;
+      setUsd(usdRes.toFixed(2));
+    } else if (values.date === "360") {
+      let usdRes = (amount / 21.4004) * 21.3402;
+      setUsd(usdRes.toFixed(2));
     }
-    if(values.date==="90"){
-      let usdRes = (amount/usd90)*usdToday
-      setUsd(usdRes.toFixed(2))
-    }
-    if(values.date==="180"){
-      let usdRes = (amount/usd180)*usdToday
-      setUsd(usdRes.toFixed(2))
-    }
-    if(values.date==="360"){
-      let usdRes = (amount/usd180)*usdToday
-      setUsd(usdRes.toFixed(2))
-    }
-  }
+  };
 
   const titlesQuantity = () => {
-    if(values.investmentFund === 'BLKGUB1'){
-      let titleRes = navBlkgub/parseInt(values.initialAmount)
-      setTitles(titleRes.toFixed(6))
+    let amttt = parseInt(values.initialAmount);
+    if (values.investmentFund === "BLKGUB1" && values.date === "28") {
+      let titleRes = amttt / 2.328255;
+      setTitles(titleRes.toFixed(2));
     }
-    if(values.investmentFund === 'BLK1MAS'){
-      let titleRes = navBlkmas/parseInt(values.initialAmount)
-      setTitles(titleRes.toFixed(6))
+    if (values.investmentFund === "BLKGUB1" && values.date === "90") {
+      let titleRes = amttt / 2.317759;
+      setTitles(titleRes.toFixed(2));
     }
-    if(values.investmentFund === 'GOLD2'){
-      let titleRes = navGold/parseInt(values.initialAmount)
-      setTitles(titleRes.toFixed(6))
+    if (values.investmentFund === "BLKGUB1" && values.date === "180") {
+      let titleRes = amttt / 2.297849;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "BLKGUB1" && values.date === "360") {
+      let titleRes = amttt / 2.272266;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "28") {
+      let titleRes = amttt / 1.36333;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "90") {
+      let titleRes = amttt / 1.349068;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "180") {
+      let titleRes = amttt / 1.328557;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "BLK1MAS" && values.date === "360") {
+      let titleRes = amttt / 1.321398;
+      setTitles(titleRes.toFixed(2));
     }
 
-  }
-
-  const formulaResult = () => {
-    let res =
-      (percent / 100 / 360) *
-        parseInt(values.date) *
-        parseInt(values.initialAmount) +
-      parseInt(values.initialAmount);
-    setGanancia(res.toFixed(2));
+    if (values.investmentFund === "GOLD2" && values.date === "28") {
+      let titleRes = amttt / 1.56651;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "GOLD2" && values.date === "90") {
+      let titleRes = amttt / 1.549473;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "GOLD2" && values.date === "180") {
+      let titleRes = amttt / 1.393334;
+      setTitles(titleRes.toFixed(2));
+    }
+    if (values.investmentFund === "GOLD2" && values.date === "360") {
+      let titleRes = amttt / 1.21932;
+      setTitles(titleRes.toFixed(2));
+    }
   };
+
+  console.log(values);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -213,8 +296,8 @@ function Calculator() {
       </AppBar>
       <div className="top-container">
         <Grid container justify="center">
-          <Typography variant="body1" style={{ padding: "2em 20px 0px 30px" }}>
-            La calculadora de inversión te muestra cuanto tendrías ganado si ya hubieras invertido.
+          <Typography variant="body1" align="center" style={{ padding: "2em 20px 0px 30px", fontWeight: 'bold' }}>
+          Conoce cuanto habrías ganado ayer de haber invertido en nuestros fondos BLK.
           </Typography>
         </Grid>
 
@@ -358,7 +441,7 @@ function Calculator() {
                     ></CardMedia>
                     <div className={classes.cardText}>
                       <Typography className={classes.titlesTypo}>
-                        NÚMERO DE TÍTULOS
+                        NÚMERO DE TÍTULOS 
                       </Typography>
                       <div className={classes.titlesNumContent}>
                         <Typography
@@ -387,7 +470,7 @@ function Calculator() {
                         <Typography
                           style={{ size: "14px", marginBottom: "5px" }}
                         >
-                          -
+                          {usdTitles}
                         </Typography>
 
                         <Typography className={classes.titlesTypo}>
@@ -431,7 +514,7 @@ function Calculator() {
           </Grid>
         </div>
       ) : null}
-      <Footer/>  
+      <Footer />
     </div>
   );
 }

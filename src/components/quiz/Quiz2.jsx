@@ -91,8 +91,11 @@ function Quiz2({ history }) {
   const openInvest = () => {
     history.push("/Invest");
   };
+  
 
-  const nextQuestion = () => {};
+  const openHome = () => {
+    history.push("/");
+  };
   return (
     <div className="App maincontainer">
       <AppBar position="sticky" className={classes.header}>
@@ -213,7 +216,7 @@ function Quiz2({ history }) {
                         type="submit"
                         variant="outlined"
                         color="primary"
-                        onClick={nextQuestion}
+                        onClick={openHome}
                         className={classes.button}
                       >
                         CONTINUAR
